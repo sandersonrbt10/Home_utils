@@ -22,7 +22,8 @@ parser.add_argument('-og', '--organize_groceries',
 args = parser.parse_args()
 
 #Pull in ourgroceries data
-og = OurGroceries(args.username, args.password)
+og = OurGroceries(args.username,
+                  args.password)
 loop = asyncio.get_event_loop()
 loop.run_until_complete(og.login())
 my_lists = loop.run_until_complete(og.get_my_lists())
